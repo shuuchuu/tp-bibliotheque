@@ -1,0 +1,20 @@
+livres:
+  - Vingt Mille Lieues sous les mers
+  - Voyage au centre de la Terre
+  - De la Terre à la Lune
+  - Le Tour du monde en quatre-vingts jours
+  - L'Île mystérieuse
+membres:
+  - John Doe
+  - Jane Doe
+  - Sherlock Holmes
+emprunts:
+  - livre: Voyage au centre de la Terre
+    membre: Jane Doe
+    date: "2024-01-03"
+  - livre: Le Tour du monde en quatre-vingts jours
+    membre: Sherlock Holmes
+    date: "2024-01-05"
+  - livre: L'Île mystérieuse
+    membre: Sherlock Holmes
+    date: "2024-01-07"
