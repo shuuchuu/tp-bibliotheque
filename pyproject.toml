@@ -2,7 +2,10 @@
 authors = [
   {name = "m09", email = "142691+m09@users.noreply.github.com"},
 ]
-dependencies = []
+dependencies = [
+  "pyyaml >= 6, < 7",
+  "sqlalchemy >= 2, < 3",
+]
 description = "Library management lab with SQLAlchemy."
 homepage = "https://github.com/shuuchuu/tp-bibliotheque"
 license = "Apache-2.0"
@@ -12,11 +15,15 @@ readme = "README.md"
 requires-python = ">= 3.12"
 version = "0.1.0"
 
+[project.scripts]
+bibli = "tp_bibliotheque.cli:main"
+
 [dependency-groups]
 dev = [
   "pytest >= 8",
   "ruff >= 0.16",
   "ty >= 0.0.33",
+  "types-pyyaml >= 6",
 ]
 
 [tool.ruff]
