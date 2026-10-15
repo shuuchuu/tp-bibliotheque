@@ -1,32 +1,40 @@
-[tool.poetry]
-authors = ["m09 <142691+m09@users.noreply.github.com>"]
-description = ""
+[project]
+authors = [
+  {name = "m09", email = "142691+m09@users.noreply.github.com"},
+]
+dependencies = []
+description = "Library management lab with SQLAlchemy."
+homepage = "https://github.com/shuuchuu/tp-bibliotheque"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 name = "tp-bibliotheque"
 readme = "README.md"
+requires-python = ">= 3.12"
 version = "0.1.0"
 
-[tool.poetry.dependencies]
-python = "^3.10"
-pyyaml = "^6"
-sqlalchemy = "^2"
+[dependency-groups]
+dev = [
+  "pytest >= 8",
+  "ruff >= 0.16",
+  "ty >= 0.0.33",
+]
 
-[tool.poetry.group.dev.dependencies]
-black = "^24"
-flake8 = "^7"
-flake8-bugbear = "^24"
-flake8-docstrings = "^1"
-isort = "^5"
-mypy = "^1"
-pylint = "^3"
-pytest = "^8"
-types-pyyaml = "^6"
+[tool.ruff]
+target-version = "py312"
 
-[tool.poetry.scripts]
-bibli = "tp_bibliotheque.cli:main"
+[tool.ruff.lint]
+ignore = [
+  "D1",
+  "incorrect-blank-line-before-class",
+  "multi-line-summary-second-line",
+  "non-empty-init-module",
+]
+preview = true
+select = ["A", "B", "C", "D", "DOC", "E", "EM", "F", "I", "N", "PIE", "PTH", "RET", "RUF", "SIM", "SLF", "TC", "UP", "W"]
 
-[tool.isort]
-profile = "black"
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core"]
+build-backend = "uv_build"
+requires = ["uv_build>=0.12.15,<0.13.0"]
